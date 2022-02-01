@@ -5,8 +5,7 @@ const Navigation = () => (
   <div className={styles['nav-holder']}>
     <ul>
       <li><Link to="/">Home</Link></li>
-      <li><Link to="/competition">Competition</Link></li>
-      <li><Link to="/teams">Teams</Link></li>
+      <li><Link to="/competitions">Competitions</Link></li>
     </ul>
   </div>
 );
