@@ -1,0 +1,86 @@
+.competitions-wrap {
+  display: grid;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.competition {
+  display: grid;
+  grid-template-areas:
+    "flag text text"
+    "flag text text"
+    "date date date";
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  align-items: center;
+  padding-right: 25px;
+  border-right: 4px solid #fff;
+  cursor: pointer;
+  transition: border-color 0.4s;
+}
+
+.competition:hover {
+  border-color: var(--blue);
+}
+
+.competition__flag-wrap {
+  display: flex;
+  grid-area: flag;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+}
+
+.competition__flag {
+  max-height: 150px;
+}
+
+.competition__description {
+  grid-area: text;
+  text-align: center;
+
+  h1 {
+    font-weight: 400;
+    font-size: 2.5em;
+  }
+
+  h2 {
+    margin-bottom: 15px;
+    color: var(--blue);
+    font-weight: 400;
+    font-size: 1.5em;
+  }
+
+  .competition__date-range {
+    font-size: 1.2em;
+  }
+}
+
+.loading-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+}
+
+@media (max-width: 800px) {
+  .competition__description {
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1em;
+    }
+
+    .competition__date-range {
+      font-size: 1.2em;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .competition__flag {
+    max-height: 5em;
+  }
+}
