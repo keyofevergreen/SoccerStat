@@ -4,11 +4,9 @@ import { requestCompetitions, requestCompetitionsSuccess, requestCompetitionsErr
 export const fetchCompetitions = () => async (dispatch, getState, { services }) => {
   try {
     dispatch(requestCompetitions());
-    // eslint-disable-next-line camelcase
     const { competitions } = await services.competitions.fetchCompetitions();
-    // eslint-disable-next-line camelcase
-    const notEuropeTierOne = /^(BRA|SAM|INT)$/;
-    dispatch(requestCompetitionsSuccess(competitions.filter((comp) => (comp.plan === 'TIER_ONE' && !notEuropeTierOne.test(comp.area.countryCode)))));
+    // eslint-disable-next-line max-len
+    dispatch(requestCompetitionsSuccess(competitions));
   } catch (error) {
     dispatch(requestCompetitionsError());
   }
