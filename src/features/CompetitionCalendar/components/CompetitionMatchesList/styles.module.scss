@@ -1,0 +1,17 @@
+.matches-wrap {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 55px;
+}
+
+.loading-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+}
+
+.not-found-message {
+  z-index: 30;
+  font-size: 35px;
+}
