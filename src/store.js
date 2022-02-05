@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { isDevelopment } from './utils/environments';
 import { competitionsReducer } from './features/CompetitionsList';
+import { competitionMatchesReducer } from './features/CompetitionCalendar';
 
 const createStore = ({
   history,
@@ -10,6 +11,7 @@ const createStore = ({
   configureStore({
     reducer: {
       competitions: competitionsReducer,
+      competitionMatches: competitionMatchesReducer,
     },
     devTools: isDevelopment(),
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
