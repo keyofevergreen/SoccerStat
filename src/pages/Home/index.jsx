@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 import { Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import Ball from './soccer-ball.svg';
+import Ball from '../../assets/soccer-ball.svg';
 import styles from './styles.module.scss';
 
 const Home = () => {
