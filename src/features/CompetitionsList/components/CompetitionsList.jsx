@@ -1,7 +1,7 @@
-import moment from 'moment';
 import { Result, Spin } from 'antd';
 import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
+import CompetitionItem from './CompetitionItem';
 
 const CompetitionsList = ({ loading, error, competitions }) => (
   <div className={styles['competitions-wrap']}>
@@ -13,33 +13,7 @@ const CompetitionsList = ({ loading, error, competitions }) => (
       />
     )}
     {competitions.map((comp) => (
-      <div className={styles.competition} key={comp.id}>
-        <div className={styles['competition__flag-wrap']}>
-          {comp.emblemUrl && (
-            <img
-              className={styles.competition__flag}
-              src={comp.emblemUrl}
-              alt={comp.name}
-            />
-          )}
-          {!comp.emblemUrl && (
-            <img
-              className={styles.competition__flag}
-              src={comp.area.ensignUrl}
-              alt={comp.area.name}
-            />
-          )}
-        </div>
-        <div className={styles.competition__description}>
-          <h1>{comp.name}</h1>
-          <h2>{comp.area.name}</h2>
-          <span className={styles['competition__date-range']}>
-            {`${moment(comp.currentSeason.startDate, 'YYYY-MM-DD').format('DD.MM.YYYY')}
-             —
-             ${moment(comp.currentSeason.endDate, 'YYYY-MM-DD').format('DD.MM.YYYY')}`}
-          </span>
-        </div>
-      </div>
+      <CompetitionItem comp={comp} key={comp.id} />
     ))}
   </div>
 );
@@ -47,7 +21,8 @@ const CompetitionsList = ({ loading, error, competitions }) => (
 CompetitionsList.propTypes = {
   loading: PropTypes.bool.isRequired,
   error: PropTypes.bool.isRequired,
-  competitions: PropTypes.instanceOf(Array).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  competitions: PropTypes.array.isRequired,
 };
 
 export default CompetitionsList;
