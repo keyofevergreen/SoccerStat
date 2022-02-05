@@ -1,0 +1,122 @@
+.match {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "date date date"
+    "homeTeam info awayTeam"
+    "homeTeam info awayTeam"
+    "homeTeam info awayTeam";
+}
+
+.match__date {
+  position: absolute;
+  left: -20%;
+  display: flex;
+  align-items: center;
+  max-width: 80px;
+  height: 100%;
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+.match__info {
+  display: flex;
+  flex-direction: column;
+  grid-area: info;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.match__team {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  font-weight: 400;
+  font-size: 25px;
+
+  span {
+    position: relative;
+  }
+}
+
+.match__team--home {
+  grid-area: homeTeam;
+  justify-content: right;
+  text-align: right;
+}
+
+.match__team--away {
+  grid-area: awayTeam;
+}
+
+.winner--home-team::before,
+.winner--away-team::after {
+  position: absolute;
+  top: 5px;
+  bottom: 0;
+  width: 25px;
+  content: url("../../assets/team-winner.svg");
+}
+
+.winner--home-team::before {
+  right: calc(100% + 20px);
+}
+
+.winner--away-team::after {
+  left: calc(100% + 20px);
+}
+
+.match__scores {
+  font-weight: 300;
+  font-size: 35px;
+}
+
+.match__status {
+  color: var(--blue);
+}
+
+@media (max-width: 950px) {
+  .match__team {
+    width: 140px;
+    font-size: 19px;
+  }
+
+  .match__info {
+    margin: 0 15px;
+  }
+
+  .match__scores {
+    font-size: 30px;
+  }
+
+  .match__date {
+    position: static;
+    grid-area: date;
+    justify-content: center;
+    width: 100%;
+    max-width: 175px;
+    margin: 0 auto 15px;
+    color: var(--grey);
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .match__team {
+    width: 130px;
+    font-size: 18px;
+  }
+
+  .match__scores {
+    font-size: 30px;
+  }
+
+  .winner--home-team::before,
+  .winner--away-team::after {
+    position: absolute;
+    bottom: 0;
+    width: 25px;
+    content: url("../../assets/team-winner.svg");
+  }
+}
