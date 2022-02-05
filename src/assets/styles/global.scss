@@ -7,12 +7,25 @@
 :root {
   --pretty-black: #333;
   --blue: #40a9ff;
+  --light-blue: #40a9ff9c;
   --light-grey: #f6f6f6;
+  --grey: #999da5;
+}
+
+html::-webkit-scrollbar {
+  width: 12px; /* ширина scrollbar */
+}
+
+html::-webkit-scrollbar-track {
+  background: #fff; /* цвет дорожки */
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--pretty-black);
 }
 
 body {
   min-width: 500px;
-  margin: 0;
   color: var(--pretty-black);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
@@ -20,16 +33,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-::-webkit-scrollbar {
-  width: 0;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .page-header {
-  margin-bottom: 25px;
   font-size: 40px;
+  text-align: center;
+}
+
+.page-description {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 0.5em;
   text-align: center;
 }
