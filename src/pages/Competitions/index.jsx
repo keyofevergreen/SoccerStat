@@ -8,7 +8,7 @@ import MyInput from '../../components/Input';
 import styles from './styles.module.scss';
 
 // eslint-disable-next-line
-const Competition = () => {
+const Competitions = () => {
   const { search } = useParams();
   const navigate = useNavigate();
   const [loading, error, competitions] = useCompetitions();
@@ -47,4 +47,4 @@ const Competition = () => {
   );
 };
 
-export default Competition;
+export default Competitions;
