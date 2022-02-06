@@ -25,7 +25,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 body {
-  min-width: 500px;
+  min-width: 320px;
   color: var(--pretty-black);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
@@ -47,4 +47,14 @@ code {
   font-size: 30px;
   line-height: 0.5em;
   text-align: center;
+}
+
+@media (max-width: 500px) {
+  .page-header {
+    font-size: 30px;
+  }
+
+  .page-description {
+    font-size: 23px;
+  }
 }
