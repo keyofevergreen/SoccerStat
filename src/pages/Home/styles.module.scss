@@ -19,12 +19,13 @@
     text-align: center;
   }
 
-  div {
+  .btn-wrap {
     width: 50%;
   }
 
-  img {
+  svg {
     width: 200px;
+    height: 200px;
     margin-bottom: 60px;
     animation-name: rotation;
     animation-duration: 7s;
@@ -42,10 +43,6 @@
     h2 {
       font-size: 30px;
     }
-
-    img {
-      width: 120px;
-    }
   }
 }
 
@@ -56,5 +53,28 @@
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .welcome-header {
+    min-height: 500px;
+
+    h1 {
+      line-height: 1em;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .btn-wrap {
+      width: 80%;
+    }
+
+    svg {
+      width: 150px;
+      margin-bottom: 30px;
+    }
   }
 }

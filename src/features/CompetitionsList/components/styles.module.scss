@@ -10,3 +10,13 @@
   justify-content: center;
   height: 600px;
 }
+
+@media (max-width: 500px) {
+  .competitions-wrap {
+    gap: 35px;
+  }
+
+  .loading-wrap {
+    height: 400px;
+  }
+}

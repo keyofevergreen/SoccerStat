@@ -3,11 +3,10 @@
   grid-template-areas:
     "flag text text"
     "flag text text"
-    "date date date";
+    "flag text text";
   grid-template-columns: 1fr 2fr;
   gap: 20px;
   align-items: center;
-  padding-right: 25px;
   background-color: #fff;
   border: 0;
   border-right: 4px solid #fff;
@@ -24,7 +23,6 @@
   grid-area: flag;
   align-items: center;
   justify-content: center;
-  height: 150px;
 }
 
 .competition__flag {
@@ -53,6 +51,10 @@
 }
 
 @media (max-width: 800px) {
+  .competition__flag {
+    max-height: 6em;
+  }
+
   .competition__description {
     h1 {
       font-size: 2em;
@@ -68,8 +70,27 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
+  .competition {
+    gap: 30px;
+    border-right: 0;
+  }
+
   .competition__flag {
-    max-height: 5em;
+    max-height: 4em;
+  }
+
+  .competition__description {
+    h1 {
+      font-size: 1.2em;
+    }
+
+    h2 {
+      font-size: 1em;
+    }
+
+    .competition__date-range {
+      font-size: 0.9em;
+    }
   }
 }

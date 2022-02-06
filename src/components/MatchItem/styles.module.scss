@@ -6,17 +6,19 @@
     "homeTeam info awayTeam"
     "homeTeam info awayTeam"
     "homeTeam info awayTeam";
+  margin: 0 auto;
 }
 
 .match__date {
-  position: absolute;
-  left: -20%;
-  display: flex;
-  align-items: center;
-  max-width: 80px;
-  height: 100%;
-  margin-right: 20px;
-  font-size: 18px;
+  position: static;
+  grid-area: date;
+  justify-content: center;
+  width: 100%;
+  max-width: 175px;
+  margin: 0 auto 15px;
+  color: var(--grey);
+  font-size: 20px;
+  text-align: center;
 }
 
 .match__info {
@@ -53,10 +55,10 @@
 .winner--home-team::before,
 .winner--away-team::after {
   position: absolute;
-  top: 5px;
+  top: calc(50% - 12.5px);
   bottom: 0;
   width: 25px;
-  content: url("../../assets/team-winner.svg");
+  content: url("../../../team-winner.svg");
 }
 
 .winner--home-team::before {
@@ -76,33 +78,7 @@
   color: var(--blue);
 }
 
-@media (max-width: 950px) {
-  .match__team {
-    width: 140px;
-    font-size: 19px;
-  }
-
-  .match__info {
-    margin: 0 15px;
-  }
-
-  .match__scores {
-    font-size: 30px;
-  }
-
-  .match__date {
-    position: static;
-    grid-area: date;
-    justify-content: center;
-    width: 100%;
-    max-width: 175px;
-    margin: 0 auto 15px;
-    color: var(--grey);
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .match__team {
     width: 130px;
     font-size: 18px;
@@ -112,11 +88,75 @@
     font-size: 30px;
   }
 
+  .match__info {
+    font-size: 15px;
+  }
+
+  .match__date {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .match__team {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .match__scores {
+    font-size: 20px;
+  }
+
+  .match__info {
+    font-size: 12px;
+  }
+
+  .match__date {
+    font-size: 12px;
+  }
+
   .winner--home-team::before,
   .winner--away-team::after {
     position: absolute;
+    top: calc(50% - 10px);
     bottom: 0;
-    width: 25px;
-    content: url("../../assets/team-winner.svg");
+    width: 20px;
+    content: url("../../../team-winner.svg");
+  }
+}
+
+@media (max-width: 350px) {
+  .match__team {
+    width: 90px;
+    font-size: 13px;
+  }
+
+  .match__scores {
+    font-size: 14px;
+  }
+
+  .match__info {
+    font-size: 9px;
+  }
+
+  .match__date {
+    font-size: 10px;
+  }
+
+  .winner--home-team::before,
+  .winner--away-team::after {
+    position: absolute;
+    top: calc(50% - 6px);
+    bottom: 0;
+    width: 15px;
+    content: url("../../../team-winner.svg");
+  }
+
+  .winner--home-team::before {
+    right: calc(100% + 5px);
+  }
+
+  .winner--away-team::after {
+    left: calc(100% + 5px);
   }
 }

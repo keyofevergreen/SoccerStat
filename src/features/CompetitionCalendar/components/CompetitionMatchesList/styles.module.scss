@@ -15,3 +15,13 @@
   z-index: 30;
   font-size: 35px;
 }
+
+@media (max-width: 500px) {
+  .loading-wrap {
+    height: 400px;
+  }
+
+  .matches-wrap {
+    gap: 35px;
+  }
+}
