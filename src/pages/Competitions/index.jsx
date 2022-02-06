@@ -1,10 +1,10 @@
 import { Helmet } from 'react-helmet';
-import '../../assets/styles/global.scss';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import CompetitionsList from '../../features/CompetitionsList/components/CompetitionsList';
 import { useCompetitions } from '../../features/CompetitionsList';
 import MyInput from '../../components/Input';
+import '../../assets/styles/global.scss';
 import styles from './styles.module.scss';
 
 // eslint-disable-next-line
