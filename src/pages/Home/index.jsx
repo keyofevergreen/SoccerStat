@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 import { Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import Ball from '../../assets/soccer-ball.svg';
+import Ball from './ball.component.svg';
 import styles from './styles.module.scss';
 
 const Home = () => {
@@ -19,10 +19,10 @@ const Home = () => {
         <meta name="description" content="Home page" />
       </Helmet>
       <div className={styles['welcome-header']}>
-        <img src={Ball} alt="Soccer ball" />
+        <Ball />
         <h1>Welcome to SoccerStat.</h1>
         <h2>League. Teams. Matches. Here.</h2>
-        <div>
+        <div className={styles['btn-wrap']}>
           <Button type="primary" shape="round" size="large" block onClick={onClick}>
             Let&apos;s start.
           </Button>
