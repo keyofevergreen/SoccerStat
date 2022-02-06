@@ -1,14 +1,20 @@
 import { Helmet } from 'react-helmet';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { Button } from 'antd';
 import CompetitionCalendar from '../../features/CompetitionCalendar/components/CompetitionCalendar';
 import { useCompetitionMatches } from '../../features/CompetitionCalendar';
 import styles from './styles.module.scss';
 
 const Competition = () => {
+  const navigate = useNavigate();
   const { competitionId } = useParams();
   const [loading, error, matches, competition] = useCompetitionMatches(competitionId);
   const competitionFlag = JSON.parse(localStorage.currentCompetitionFlag);
+
+  const onClick = (e) => {
+    e.preventDefault();
+    navigate(`/competition/${competitionId}/teams`);
+  };
   return (
     <div>
       <Helmet>
@@ -25,7 +31,7 @@ const Competition = () => {
               <span className="page-description">{competition?.area?.name}</span>
             </div>
           </div>
-          <Button type="primary" block className={styles['button-link']}>
+          <Button type="primary" block className={styles['button-link']} onClick={onClick}>
             Show participating teams
           </Button>
         </>
