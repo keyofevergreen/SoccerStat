@@ -1,12 +1,15 @@
 {
   "name": "SoccerStat",
   "version": "1.0.0",
+  "homepage": "https://keyofevergreen.github.io/SoccerStat",
   "description": "",
   "keywords": [],
   "license": "ISC",
   "author": "",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "analyzer": "node scripts.build --analyzer",
     "build": "node scripts.build --mode=production",
     "lint": "eslint \"src/**\"",
@@ -35,6 +38,7 @@
   "devDependencies": {
     "@rockpack/codestyle": "2.0.1",
     "@rockpack/compiler": "2.0.1",
+    "gh-pages": "3.2.3",
     "postcss": "8.4.5",
     "postcss-scss": "4.0.3",
     "prettier": "2.5.1",
