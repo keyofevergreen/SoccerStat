@@ -1,6 +1,5 @@
 import { Input } from 'antd';
 import PropTypes from 'prop-types';
-import { SearchOutlined } from '@ant-design/icons';
 
 const MyInput = ({ placeholder, value, handleChange }) => (
   <Input
@@ -8,7 +7,6 @@ const MyInput = ({ placeholder, value, handleChange }) => (
     onChange={(e) => handleChange(e.target.value)}
     size="large"
     placeholder={placeholder}
-    prefix={<SearchOutlined />}
   />
 );
 
