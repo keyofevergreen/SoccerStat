@@ -1,5 +1,6 @@
 import { Input } from 'antd';
 import PropTypes from 'prop-types';
+import styles from './styles.module.scss';
 
 const MyInput = ({ placeholder, value, handleChange }) => (
   <Input
@@ -7,6 +8,7 @@ const MyInput = ({ placeholder, value, handleChange }) => (
     onChange={(e) => handleChange(e.target.value)}
     size="large"
     placeholder={placeholder}
+    className={styles['input-wrap']}
   />
 );
 
