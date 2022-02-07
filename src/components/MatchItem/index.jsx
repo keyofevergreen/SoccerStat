@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import styles from './styles.module.scss';
+import '../../assets/styles/global.scss';
 
 const MatchItem = ({ match }) => (
   <div className={styles.match}>
@@ -8,14 +10,14 @@ const MatchItem = ({ match }) => (
       {moment(match.utcDate, moment.ISO_8601).format('DD MMM YYYY HH:mm')}
     </div>
     <div className={`${styles.match__team} ${styles['match__team--home']}`}>
-      <span className={match.score.winner === 'HOME_TEAM' ? styles['winner--home-team'] : ''}>{match.homeTeam.name}</span>
+      <Link to={`/team/${match.homeTeam.id}`} className={match.score.winner === 'HOME_TEAM' ? styles['winner--home-team'] : ''}>{match.homeTeam.name}</Link>
     </div>
     <div className={`${styles.match__team} ${styles['match__team--away']}`}>
-      <span className={match.score.winner === 'AWAY_TEAM' ? styles['winner--away-team'] : ''}>{match.awayTeam.name}</span>
+      <Link to={`/team/${match.awayTeam.id}`} className={match.score.winner === 'AWAY_TEAM' ? styles['winner--away-team'] : ''}>{match.awayTeam.name}</Link>
     </div>
     <div className={styles.match__info}>
       <div className={styles.match__group}>
-        Group A
+        {match.group}
       </div>
       <span className={styles.match__scores}>
         {match.score.winner ? `${match.score.fullTime.homeTeam}:${match.score.fullTime.awayTeam}` : '-'}
