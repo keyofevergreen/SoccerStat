@@ -1,20 +1,16 @@
 import { Helmet } from 'react-helmet';
-import { useNavigate, useParams } from 'react-router';
-import { Button } from 'antd';
-import CompetitionCalendar from '../../features/CompetitionCalendar/components/CompetitionCalendar';
+import { useParams } from 'react-router';
+import { Route, Routes } from 'react-router-dom';
+import CompetitionCalendar from '../../features/CompetitionCalendar/components';
 import { useCompetitionMatches } from '../../features/CompetitionCalendar';
+import CompetitionTeams from '../../features/CompetitionTeams/components';
 import styles from './styles.module.scss';
 
 const Competition = () => {
-  const navigate = useNavigate();
   const { competitionId } = useParams();
   const [loading, error, matches, competition] = useCompetitionMatches(competitionId);
   const competitionFlag = JSON.parse(localStorage.currentCompetitionFlag);
 
-  const onClick = (e) => {
-    e.preventDefault();
-    navigate(`/competition/${competitionId}/teams`);
-  };
   return (
     <div>
       <Helmet>
@@ -23,25 +19,46 @@ const Competition = () => {
         <meta name="description" content="League Calendar page" />
       </Helmet>
       {!loading && !error && (
-        <>
-          <div className={styles['page-header-wrap']}>
-            <h1 className="page-header">{competition.name}</h1>
-            <div className={styles['page-description-wrap']}>
-              <img src={competitionFlag.url} alt={competitionFlag.alt} className={styles['flag-img']} />
-              <span className="page-description">{competition?.area?.name}</span>
-            </div>
+        <div className={styles['page-header-wrap']}>
+          <h1 className="page-header">{competition.name}</h1>
+          <div className={styles['page-description-wrap']}>
+            <img src={competitionFlag.url} alt={competitionFlag.alt} className={styles['flag-img']} />
+            <span className="page-description">{competition?.area?.name}</span>
           </div>
-          <Button type="primary" block className={styles['button-link']} onClick={onClick}>
-            Show participating teams
-          </Button>
-        </>
+        </div>
       )}
-      <CompetitionCalendar
-        loading={loading}
-        error={error}
-        matches={matches}
-        competition={competition}
-      />
+
+      <Routes>
+        <Route
+          exact
+          index
+          element={
+            (
+              <CompetitionCalendar
+                loading={loading}
+                error={error}
+                matches={matches}
+                competition={competition}
+              />
+            )
+          }
+        />
+        <Route
+          path="/:dateRange"
+          element={
+          (
+            <CompetitionCalendar
+              loading={loading}
+              error={error}
+              matches={matches}
+              competition={competition}
+            />
+          )
+        }
+        />
+        <Route path="/teams" element={<CompetitionTeams />} />
+        <Route path="/teams/:search" element={<CompetitionTeams />} />
+      </Routes>
     </div>
   );
 };
