@@ -4,13 +4,13 @@ import { fetchCompetitionMatches } from './thunks';
 
 // eslint-disable-next-line import/prefer-default-export
 export const useCompetitionMatches = (id) => {
-  const [urlCode] = id.split('-');
+  const [CompetitionCode] = id.split('-');
   const dispatch = useDispatch();
   // eslint-disable-next-line object-curly-newline
   const { matches, competition, error, loading } = useSelector((state) => state.competitionMatches);
 
   useEffect(() => {
-    dispatch(fetchCompetitionMatches(urlCode));
+    dispatch(fetchCompetitionMatches(CompetitionCode));
   }, []);
 
   return [loading, error, matches, competition];
