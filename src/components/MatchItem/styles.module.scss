@@ -37,8 +37,14 @@
   font-weight: 400;
   font-size: 25px;
 
-  span {
+  a {
     position: relative;
+    color: var(--pretty-black);
+    transition: color 0.4s;
+  }
+
+  a:hover {
+    color: var(--blue);
   }
 }
 
