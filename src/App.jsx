@@ -5,16 +5,16 @@ import Home from './pages/Home';
 import Index from './pages/Index';
 import Competitions from './pages/Competitions';
 import Competition from './pages/Competition';
-import Teams from './pages/Teams';
+import Team from './pages/Team';
 
 const App = () => (
   <Index>
     <Routes>
-      <Route index element={<Home />} />
-      <Route exact path="competitions/*" element={<Competitions />} />
-      <Route path="competitions/:search" element={<Competitions />} />
-      <Route path="competition/:competitionId" element={<Competition />} />
-      <Route path="competition/:competitionId/teams" element={<Teams />} />
+      <Route exact index element={<Home />} />
+      <Route path="/competitions/" element={<Competitions />} />
+      <Route path="/competitions/:search" element={<Competitions />} />
+      <Route path="/competition/:competitionId/*" element={<Competition />} />
+      <Route path="/team/:teamId/*" element={<Team />} />
       <Route
         path="*"
         element={<Navigate to="/" />}
