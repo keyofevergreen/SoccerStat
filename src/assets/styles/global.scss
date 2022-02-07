@@ -37,6 +37,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+a * {
+  color: var(--pretty-black);
+}
+
 .page-header {
   font-size: 40px;
   text-align: center;
