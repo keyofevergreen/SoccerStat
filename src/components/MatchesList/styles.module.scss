@@ -1,0 +1,11 @@
+.matches-wrap {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 55px;
+}
+
+@media (max-width: 500px) {
+  .matches-wrap {
+    gap: 35px;
+  }
+}
