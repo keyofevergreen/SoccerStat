@@ -12,8 +12,7 @@ const CompetitionList = ({ loading, error, competitions }) => (
     {!error && !loading && !competitions.length
       ? <NotFoundMessage>Not found competition for this query</NotFoundMessage>
       : competitions.map((comp) => (
-        // eslint-disable-next-line
-        <CompetitionItem comp={comp} fullMode={true} key={comp.id} />
+        <CompetitionItem comp={comp} fullMode key={comp.id} />
       ))}
   </div>
 );

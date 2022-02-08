@@ -1,6 +1,6 @@
 import { requestCompetitionMatches, requestCompetitionMatchesError, requestCompetitionMatchesSuccess } from './actions';
 
-// eslint-disable-next-line
+// eslint-disable-next-line import/prefer-default-export
 export const fetchCompetitionMatches = (id) => async (dispatch, getState, { services }) => {
   try {
     dispatch(requestCompetitionMatches());

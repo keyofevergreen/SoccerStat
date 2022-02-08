@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { useCompetitionTeams } from '../hooks';
-import { useSortedList } from '../../../helpers/hooks';
+import { useSortedList } from '../../../utils/hooks';
 import LimitErrorMessage from '../../../components/LimitErrorMessage';
 import LoadingSpin from '../../../components/LoadingSpin';
 import NotFoundMessage from '../../../components/NotFoundMessage';

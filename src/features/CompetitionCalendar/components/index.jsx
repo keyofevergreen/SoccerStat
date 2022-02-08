@@ -6,20 +6,27 @@ import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import '../../../pages/Competition/antd.css';
 import MatchesList from '../../../components/MatchesList';
-import { useSortedMatchesByDateRange } from '../../../helpers/hooks';
+import { useSortedMatchesByDateRange } from '../../../utils/hooks';
 import MyRangePicker from '../../../components/MyRangePicker';
 
 const UTC_FORMAT = moment.ISO_8601;
 const getDate = (date) => moment(date, UTC_FORMAT);
-// eslint-disable-next-line
-const CompetitionCalendar = ({ loading, error, matches }) => {
+
+const CompetitionCalendar = (
+  {
+    loading,
+    error,
+    matches,
+  },
+) => {
   const navigate = useNavigate();
   const { competitionId, dateRange } = useParams();
   const [rangeValue, setRangeValue] = useState(['', '']);
-  // eslint-disable-next-line
-  const sortedMatchesByTime = useMemo(() => {
-    return [...matches].sort((a, b) => getDate(b.utcDate).diff(getDate(a.utcDate)));
-  }, [matches]);
+  const sortedMatchesByTime = useMemo(
+    () => [...matches]
+      .sort((a, b) => getDate(b.utcDate).diff(getDate(a.utcDate))),
+    [matches],
+  );
   const [sortedMatches] = useSortedMatchesByDateRange(rangeValue, sortedMatchesByTime);
 
   useEffect(() => {
@@ -30,8 +37,6 @@ const CompetitionCalendar = ({ loading, error, matches }) => {
   }, []);
 
   const onChange = (dates, dateStrings) => {
-    // eslint-disable-next-line
-    console.log(dateStrings);
     setRangeValue([(dateStrings[0]), dateStrings[1]]);
     if (dateStrings.includes('')) {
       navigate(`/competition/${competitionId}/`);

@@ -24,15 +24,14 @@ const Team = () => {
         && (
           <>
             <div className={styles['team-info']}>
-              {/* eslint-disable-next-line */}
-              <TeamItem team={team} fullMode={true} />
+              <TeamItem team={team} fullMode />
             </div>
             {team.activeCompetitions
             && (
               <div className={styles['active-competitions']}>
                 <h2>Active Competitions</h2>
-                {/* eslint-disable-next-line */}
-                {team.activeCompetitions.filter((comp) => comp.plan === 'TIER_ONE').map((comp) => <CompetitionItem comp={comp} fullMode={false} key={comp.id} />)}
+                {team.activeCompetitions.filter((comp) => comp.plan === 'TIER_ONE').map((comp) => <CompetitionItem
+                  comp={comp} fullMode={false} key={comp.id} />)}
               </div>
             )}
           </>

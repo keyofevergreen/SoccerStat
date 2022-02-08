@@ -13,7 +13,7 @@ export const useSortedList = (list, searchQuery) => {
   useEffect(() => {
     setSortedList(
       list
-        // eslint-disable-next-line
+        // eslint-disable-next-line max-len
         .filter((item) => getMatchesWithSearchQuery(item.name, searchQuery) || getMatchesWithSearchQuery(item.area.name, searchQuery)),
     );
   }, [list, searchQuery]);

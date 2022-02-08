@@ -5,9 +5,8 @@ import CompetitionsList from '../../features/CompetitionsList/components';
 import { useCompetitions } from '../../features/CompetitionsList';
 import MyInput from '../../components/Input';
 import '../../assets/styles/global.scss';
-import { useSortedList } from '../../helpers/hooks';
+import { useSortedList } from '../../utils/hooks';
 
-// eslint-disable-next-line
 const Competitions = () => {
   const { search } = useParams();
   const navigate = useNavigate();

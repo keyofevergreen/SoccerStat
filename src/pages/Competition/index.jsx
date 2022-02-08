@@ -46,15 +46,15 @@ const Competition = () => {
         <Route
           path="/:dateRange"
           element={
-          (
-            <CompetitionCalendar
-              loading={loading}
-              error={error}
-              matches={matches}
-              competition={competition}
-            />
-          )
-        }
+            (
+              <CompetitionCalendar
+                loading={loading}
+                error={error}
+                matches={matches}
+                competition={competition}
+              />
+            )
+          }
         />
         <Route path="/teams" element={<CompetitionTeams />} />
         <Route path="/teams/:search" element={<CompetitionTeams />} />

@@ -4,8 +4,11 @@ import { fetchTeamData, fetchTeamMatches } from './thunks';
 
 export const useTeam = (id) => {
   const dispatch = useDispatch();
-  // eslint-disable-next-line object-curly-newline
-  const { team, teamError, teamLoading } = useSelector((state) => state.team);
+  const {
+    team,
+    teamError,
+    teamLoading,
+  } = useSelector((state) => state.team);
 
   useEffect(() => {
     dispatch(fetchTeamData(id));
@@ -16,8 +19,11 @@ export const useTeam = (id) => {
 
 export const useTeamMatches = (id) => {
   const dispatch = useDispatch();
-  // eslint-disable-next-line object-curly-newline
-  const { matches, matchesError, matchesLoading } = useSelector((state) => state.team);
+  const {
+    matches,
+    matchesError,
+    matchesLoading,
+  } = useSelector((state) => state.team);
 
   useEffect(() => {
     dispatch(fetchTeamMatches(id));

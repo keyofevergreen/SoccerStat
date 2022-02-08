@@ -6,8 +6,12 @@ import { fetchCompetitionMatches } from './thunks';
 export const useCompetitionMatches = (id) => {
   const [CompetitionCode] = id.split('-');
   const dispatch = useDispatch();
-  // eslint-disable-next-line object-curly-newline
-  const { matches, competition, error, loading } = useSelector((state) => state.competitionMatches);
+  const {
+    matches,
+    competition,
+    error,
+    loading,
+  } = useSelector((state) => state.competitionMatches);
 
   useEffect(() => {
     dispatch(fetchCompetitionMatches(CompetitionCode));

@@ -6,7 +6,7 @@ import {
   requestTeamMatchesSuccess,
 } from './actions';
 
-// eslint-disable-next-line
+// eslint-disable-next-line import/prefer-default-export
 export const fetchTeamData = (id) => async (dispatch, getState, { services }) => {
   try {
     dispatch(requestTeamData());
@@ -17,7 +17,7 @@ export const fetchTeamData = (id) => async (dispatch, getState, { services }) =>
   }
 };
 
-// eslint-disable-next-line
+// eslint-disable-next-line import/prefer-default-export
 export const fetchTeamMatches = (id) => async (dispatch, getState, { services }) => {
   try {
     dispatch(requestTeamMatches());
