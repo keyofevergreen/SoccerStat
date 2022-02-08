@@ -64,7 +64,7 @@
   top: calc(50% - 12.5px);
   bottom: 0;
   width: 25px;
-  content: url("../../../team-winner.svg");
+  content: url("../../assets/team-winner.svg");
 }
 
 .winner--home-team::before {
@@ -127,7 +127,7 @@
     top: calc(50% - 10px);
     bottom: 0;
     width: 20px;
-    content: url("../../../team-winner.svg");
+    content: url("../../assets/team-winner.svg");
   }
 }
 
@@ -155,7 +155,7 @@
     top: calc(50% - 6px);
     bottom: 0;
     width: 15px;
-    content: url("../../../team-winner.svg");
+    content: url("../../assets/team-winner.svg");
   }
 
   .winner--home-team::before {
