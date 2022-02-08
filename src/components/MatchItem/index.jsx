@@ -17,7 +17,7 @@ const MatchItem = ({ match }) => (
     </div>
     <div className={styles.match__info}>
       <div className={styles.match__group}>
-        {match.group}
+        {match.group !== null ? match.group.replace('_', ' ').toLowerCase() : null}
       </div>
       <span className={styles.match__scores}>
         {match.score.winner ? `${match.score.fullTime.homeTeam}:${match.score.fullTime.awayTeam}` : '-'}
