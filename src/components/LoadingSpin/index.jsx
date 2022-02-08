@@ -1,6 +1,6 @@
 import { Spin } from 'antd';
 import styles from './styles.module.scss';
-import Ball from '../../pages/Home/ball.component.svg';
+import Ball from '../../assets/ball.component.svg';
 
 const LoadingSpin = () => {
   const BallIcon = <Ball className={styles.spin} />;
