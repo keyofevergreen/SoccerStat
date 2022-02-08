@@ -30,8 +30,9 @@ const Team = () => {
             && (
               <div className={styles['active-competitions']}>
                 <h2>Active Competitions</h2>
-                {team.activeCompetitions.filter((comp) => comp.plan === 'TIER_ONE').map((comp) => <CompetitionItem
-                  comp={comp} fullMode={false} key={comp.id} />)}
+                {team.activeCompetitions
+                  .filter((comp) => comp.plan === 'TIER_ONE')
+                  .map((comp) => <CompetitionItem comp={comp} fullMode={false} key={comp.id} />)}
               </div>
             )}
           </>
