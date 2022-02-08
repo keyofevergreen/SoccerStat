@@ -9,6 +9,17 @@ Used Libraries:
 - @loadable/component
 - moment.js
 - antd
+- gh-pages
+
+Features:
+- List of leagues/competitions
+- List all teams for a particular competition
+- Competition calendar - list of league/competition matches
+- Calendar for a particular team - list of team matches
+- On the calendar pages, you can specify a filter by date (from, to)
+- On the list pages, you can find an entity by text search
+- After refreshing the page, the data (year, team, search query) is saved (parameters are saved using routing)
+### The last feature, unfortunately, does NOT work in the demo on gh-pages
 
 ### 🐱‍🏍If you want to see a demo go [here](https://keyofevergreen.github.io/SoccerStat/)!
 
