@@ -28,6 +28,10 @@
   align-items: center;
   justify-content: center;
   margin: 0 20px;
+
+  .match__group {
+    text-transform: capitalize;
+  }
 }
 
 .match__team {
