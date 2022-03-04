@@ -6,7 +6,6 @@ Used Libraries:
 - @reduxjs/toolkit
 - react-router 6+
 - react-helmet
-- @loadable/component
 - moment.js
 - antd
 - gh-pages
